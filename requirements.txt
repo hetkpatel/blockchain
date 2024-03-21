@@ -1,0 +1,15 @@
+blinker
+certifi
+charset-normalizer
+click
+Flask
+idna
+importlib_metadata
+itsdangerous
+Jinja2
+MarkupSafe
+random-username
+requests
+urllib3
+Werkzeug
+zipp
