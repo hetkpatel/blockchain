@@ -1,0 +1,26 @@
+version: '3.8'
+name: blockchain-demo
+services:
+  blockchain:
+    build:
+      context: .
+      dockerfile: blockchain.Dockerfile
+    container_name: blockchain
+    ports:
+      - "8080:8080"
+  
+  client:
+    build:
+      context: .
+      dockerfile: client.Dockerfile
+    container_name: client
+    depends_on:
+      - blockchain
+
+  miner:
+    build:
+      context: .
+      dockerfile: miner.Dockerfile
+    container_name: miner
+    depends_on:
+      - blockchain

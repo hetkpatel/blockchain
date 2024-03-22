@@ -10,7 +10,7 @@ while True:
     sleep(randint(1, 5))
 
     # Grab next pending block (if available)
-    response = requests.request("GET", "http://127.0.0.1:8080/get_next_block")
+    response = requests.request("GET", "http://blockchain:8080/get_next_block")
     block_data = json.loads(response.text)
     if block_data == {}:
         print("No blocks to mine")
@@ -31,7 +31,7 @@ while True:
     # Submit answer
     requests.request(
         "PUT",
-        "http://127.0.0.1:8080/confirm_block",
+        "http://blockchain:8080/confirm_block",
         data=json.dumps({"id": block.id, "nonce": block.nonce}),
         headers={"Content-Type": "application/json"},
     )

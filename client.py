@@ -8,7 +8,7 @@ from random import randint
 while True:
     requests.request(
         "POST",
-        "http://127.0.0.1:8080/add_block",
+        "http://blockchain:8080/add_block",
         data=json.dumps({"data": generate_username()[0]}),
         headers={"Content-Type": "application/json"},
     )
